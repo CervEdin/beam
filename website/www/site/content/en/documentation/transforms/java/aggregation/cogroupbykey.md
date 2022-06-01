@@ -61,7 +61,7 @@ result.apply(ParDo.of(new DoFn<KV<K, CoGbkResult>, /* some result */>() {
     Iterable<Integer> allIntegers = result.getAll(t1);
     // Retrieve the string associated with this key from pt2.
     // Note: This will fail if multiple values had the same key in pt2.
-    String string = e.getOnly(t2);
+    String string = result.getOnly(t2);
     ...
 }));
 {{< /highlight >}}
